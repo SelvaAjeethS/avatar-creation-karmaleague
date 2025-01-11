@@ -17,11 +17,14 @@ const config = {
 
 export default function AvatarsCreator() {
   const [avatarUrl, setAvatarUrl] = useState('');
+  const [avatarPng, SetAvatarPng] = useState('');
 
 
   const handleOnAvatarExported = (event) => {
     console.log('Avatar Export Event:', event);
+    console.log('Avatar Export Event:', event.data.avatarId);
     setAvatarUrl(event?.data?.url || '');
+    SetAvatarPng(event.data.avatarId || '')
   };
 
   // const showAlert = () => {
@@ -49,7 +52,7 @@ export default function AvatarsCreator() {
           onAvatarExported={handleOnAvatarExported}
         />
       </div>
-      <AvatarUrlModal avatarUrl={avatarUrl} />
+      <AvatarUrlModal avatarUrl={avatarUrl} avatarPng={avatarPng} />
     </div>
   );
 }
