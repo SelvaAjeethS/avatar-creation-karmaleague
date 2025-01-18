@@ -11,6 +11,8 @@ import {
   Button,
   useDisclosure,
 } from "@nextui-org/react";
+import PreviewModal from "./PreviewModal";
+
 // import { redirect, useRouter } from "next/navigation";
 
 export default function AvatarUrlModal({ avatarUrl, avatarPng }) {
@@ -100,7 +102,8 @@ export default function AvatarUrlModal({ avatarUrl, avatarPng }) {
         >
           Click To Generate Avatar
         </Button>
-        <Button
+        <PreviewModal avatarPng={avatarPng} />
+        {/* <Button
           onPress={handlePreview}
           style={{
             padding: "10px 20px",
@@ -116,8 +119,8 @@ export default function AvatarUrlModal({ avatarUrl, avatarPng }) {
           }}
         >
           Preview
-        </Button>
-        <Button
+        </Button> */}
+        {/* <Button
           onPress={handleDownload}
           style={{
             padding: "10px 20px",
@@ -131,7 +134,7 @@ export default function AvatarUrlModal({ avatarUrl, avatarPng }) {
           }}
         >
           Download
-        </Button>
+        </Button> */}
       </div>
       <Modal
         isDismissable={true}
